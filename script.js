@@ -13,9 +13,13 @@ let background = document.getElementById("background");
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
 
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 let noCount = 0;
 
 function typeText(element, text, speed = 40) {
