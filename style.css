@@ -53,6 +53,7 @@ body{
   position:relative;
   width:100vw;
   height:100vh;
+  overflow:hidden;
 }
 
 #background{
@@ -67,7 +68,7 @@ body{
   position:absolute;
   bottom:15%;
   left:50%;
-  height:60vh;
+  height: min(60vh, 500px);
   image-rendering: pixelated;
 
   animation: idleBounce 1.6s ease-in-out infinite;
@@ -79,10 +80,10 @@ body{
   bottom:12%;
   left:50%;
   transform:translateX(-50%);
-  width:70%;
+  width: min(70%, 700px);
 
   text-align:center;
-  font-size:18px;
+  font-size: clamp(12px, 2vw, 18px);
 
   background:white;
   padding:20px;
@@ -115,7 +116,7 @@ body{
 
 button{
   font-family:'Press Start 2P', cursive;
-  font-size:12px;
+  font-size: clamp(10px, 2vw, 14px);
 
   padding:14px 20px;
   margin:10px;
