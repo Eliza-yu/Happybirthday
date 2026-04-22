@@ -16,6 +16,58 @@ body{
   transition: opacity 1.2s ease;
 }
 
+#startScreen{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+
+  background:#aee6ff; /* baby blue */
+  z-index:999;
+}
+
+#startBtn{
+  font-family:'Press Start 2P', cursive;
+  font-size:16px;
+
+  padding:18px 26px;
+
+  background:white;
+  color:black;
+
+  border:4px solid black;
+  box-shadow:4px 4px 0 black;
+
+  cursor:pointer;
+
+  image-rendering: pixelated;
+  transition: transform 0.1s ease;
+}
+
+#startBtn:hover{
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 black;
+}
+
+#startBtn:active{
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0 black;
+}
+
+#title{
+  font-family:'Press Start 2P', cursive;
+  font-size:20px;
+  margin-bottom:20px;
+
+  color:black;
+}
+
 #game{
   position:relative;
   width:100vw;
