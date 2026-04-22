@@ -11,6 +11,11 @@ body{
   100% { transform: translateX(-50%) translateY(0px); }
 }
 
+.fade-out {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
 #game{
   position:relative;
   width:100vw;
@@ -33,6 +38,7 @@ body{
   image-rendering: pixelated;
 
   animation: idleBounce 1.6s ease-in-out infinite;
+  transition: opacity 1.2s ease;
 }
 
 #dialogue{
