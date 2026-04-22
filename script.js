@@ -2,8 +2,6 @@ window.onload = function () {
 
 let yesBtn = document.getElementById("yesBtn");
 let noBtn = document.getElementById("noBtn");
-
-let song = document.getElementById("song");
 let songHappy = document.getElementById("songHappy");
 
 let dialogue = document.getElementById("dialogue");
