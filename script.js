@@ -12,7 +12,7 @@ let noCount = 0;
 yesBtn.onclick = function(){
 
     background.src = "bg2.png";
-    character.src = "character3.png";
+    character.src = "character3.PNG";
     dialogue.innerText = "Happy Birthday!!!";
 
     song.play();
