@@ -58,24 +58,6 @@ noBtn.onclick = function(){
     }
 }
 
-}
-let canvas = document.getElementById("confetti");
-let ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let confettiPieces = [];
-
-for(let i=0;i<150;i++){
-    confettiPieces.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        size: Math.random()*6+4,
-        speed: Math.random()*3+2
-    });
-}
-
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
 
