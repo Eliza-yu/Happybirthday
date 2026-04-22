@@ -9,6 +9,12 @@ let background = document.getElementById("background");
 
 let song = document.getElementById("song");
 
+let canvas = document.getElementById("confetti");
+let ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 let noCount = 0;
 
 function typeText(element, text, speed = 40) {
@@ -26,6 +32,38 @@ function typeText(element, text, speed = 40) {
   type();
 }
 
+let confettiPieces = [];
+
+for(let i=0;i<150;i++){
+    confettiPieces.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        size: Math.random()*6+4,
+        speed: Math.random()*3+2
+    });
+}
+
+function drawConfetti(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    confettiPieces.forEach(piece => {
+
+        ctx.fillStyle = `hsl(${Math.random()*360},70%,60%)`;
+        ctx.fillRect(piece.x,piece.y,piece.size,piece.size);
+
+        piece.y += piece.speed;
+
+        if(piece.y > canvas.height){
+            piece.y = -10;
+            piece.x = Math.random()*canvas.width;
+        }
+
+    });
+
+    requestAnimationFrame(drawConfetti);
+}
+
 yesBtn.onclick = function(){
 
     background.src = "bg2.png";
@@ -33,8 +71,6 @@ yesBtn.onclick = function(){
 
     song.currentTime = 0;
     song.play();
-
-    character.classList.add("bounce");
 
     typeText(dialogue, "Happy Birthday!!!");
 
@@ -58,45 +94,6 @@ noBtn.onclick = function(){
         typeText(dialogue, "Yeah yeah.");
         noBtn.style.display = "none";
     }
-}
-
-let canvas = document.getElementById("confetti");
-let ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let confettiPieces = [];
-
-for(let i=0;i<150;i++){
-    confettiPieces.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        size: Math.random()*6+4,
-        speed: Math.random()*3+2
-    });
-}
-
-function drawConfetti(){
-
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    confettiPieces.forEach(piece => {
-
-        ctx.fillStyle = `hsl(${Math.random()*360},70%,60%)`;
-
-        ctx.fillRect(piece.x,piece.y,piece.size,piece.size);
-
-        piece.y += piece.speed;
-
-        if(piece.y > canvas.height){
-            piece.y = -10;
-            piece.x = Math.random()*canvas.width;
-        }
-
-    });
-
-    requestAnimationFrame(drawConfetti);
 }
 
 };
