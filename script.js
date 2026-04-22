@@ -5,7 +5,7 @@ let dialogue = document.getElementById("dialogue");
 let character = document.getElementById("character");
 let background = document.getElementById("background");
 
-let song = document.getElementById("song");
+let song = document.getElementById("audio.mp3");
 
 let noCount = 0;
 
@@ -15,7 +15,7 @@ yesBtn.onclick = function(){
     character.src = "character3.png";
     dialogue.innerText = "Happy Birthday!!!";
 
-    song.play();
+    audio.mp3();
 
     drawConfetti();   // start infinite confetti
 
