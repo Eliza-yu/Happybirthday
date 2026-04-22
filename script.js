@@ -1,3 +1,5 @@
+window.onload = function () {
+
 let yesBtn = document.getElementById("yesBtn");
 let noBtn = document.getElementById("noBtn");
 
@@ -96,3 +98,5 @@ function drawConfetti(){
 
     requestAnimationFrame(drawConfetti);
 }
+
+};
