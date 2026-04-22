@@ -69,11 +69,9 @@ yesBtn.onclick = function(){
 
     background.src = "bg2.png";
 
-    // stop intro music
     song.pause();
     song.currentTime = 0;
 
-    // switch character first
     character.src = "character3.PNG";
 
     typeText(dialogue, "Happy Birthday!!!");
@@ -82,20 +80,20 @@ yesBtn.onclick = function(){
 
     document.getElementById("choices").style.display = "none";
 
-    // start happy music
     songHappy.currentTime = 0;
     songHappy.play();
 
-    // fade out character3 then swap
+    // smooth swap
     setTimeout(() => {
+
         character.style.opacity = "0";
 
         setTimeout(() => {
             character.src = "photo1.jpg";
             character.style.opacity = "1";
-        }, 1200);
+        }, 1000);
 
-    }, 1500);
+    }, 1200);
 }
 
 noBtn.onclick = function(){
