@@ -1,3 +1,5 @@
+console.log("startBtn:", document.getElementById("startBtn"));
+console.log("song:", document.getElementById("song"));
 window.onload = function () {
 
 let yesBtn = document.getElementById("yesBtn");
@@ -68,15 +70,21 @@ let startScreen = document.getElementById("startScreen");
 
 let song = document.getElementById("song");
 
-startBtn.onclick = function(){
+startBtn.onclick = function () {
 
-    // hide start screen
+    if (!song) {
+        console.log("ERROR: song not found");
+        return;
+    }
+
     startScreen.style.display = "none";
 
-    // START MUSIC HERE (allowed by browser)
     song.volume = 0.5;
     song.loop = true;
-    song.play();
+
+    song.play().catch(err => {
+        console.log("Audio blocked or missing:", err);
+    });
 };
   
 yesBtn.onclick = function(){
