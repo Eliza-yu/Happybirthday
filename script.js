@@ -9,15 +9,34 @@ let song = document.getElementById("song");
 
 let noCount = 0;
 
+function typeText(element, text, speed = 40) {
+  element.innerText = "";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      element.innerText += text[i];
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  type();
+}
+
 yesBtn.onclick = function(){
 
     background.src = "bg2.png";
     character.src = "character3.PNG";
-    dialogue.innerText = "Happy Birthday!!!";
 
+    song.currentTime = 0;
     song.play();
 
-    drawConfetti();   // start infinite confetti
+    character.classList.add("bounce");
+
+    typeText(dialogue, "Happy Birthday!!!");
+
+    drawConfetti();
 
     document.getElementById("choices").style.display = "none";
 }
@@ -28,19 +47,35 @@ noBtn.onclick = function(){
 
     if(noCount == 1){
         character.src = "character2.PNG";
-        dialogue.innerText = "Liar.";
-
+        typeText(dialogue, "Liar.");
         noBtn.style.transform = "scale(0.7)";
     }
 
     else if(noCount == 2){
         character.src = "character4.PNG";
-        dialogue.innerText = "Yeah yeah.";
-
+        typeText(dialogue, "Yeah yeah.");
         noBtn.style.display = "none";
     }
+}
 
 }
+let canvas = document.getElementById("confetti");
+let ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let confettiPieces = [];
+
+for(let i=0;i<150;i++){
+    confettiPieces.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        size: Math.random()*6+4,
+        speed: Math.random()*3+2
+    });
+}
+
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
 
