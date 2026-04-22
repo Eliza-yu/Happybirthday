@@ -65,6 +65,22 @@ function drawConfetti(){
     requestAnimationFrame(drawConfetti);
 }
 
+  let startBtn = document.getElementById("startBtn");
+let startScreen = document.getElementById("startScreen");
+
+let song = document.getElementById("song");
+
+startBtn.onclick = function(){
+
+    // hide start screen
+    startScreen.style.display = "none";
+
+    // START MUSIC HERE (allowed by browser)
+    song.volume = 0.5;
+    song.loop = true;
+    song.play();
+};
+  
 yesBtn.onclick = function(){
 
     background.src = "bg2.png";
