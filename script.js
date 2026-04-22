@@ -91,7 +91,7 @@ yesBtn.onclick = function(){
         character.style.opacity = "0";
 
         setTimeout(() => {
-            character.src = "photo1.jpeg";
+            character.src = "photo1.jpg";
             character.style.opacity = "1";
         }, 1200);
 
