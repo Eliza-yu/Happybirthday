@@ -7,15 +7,17 @@
 
 <body>
 
-<div id="title">BIRTHDAY GAME</div>
-<button id="startBtn">START</button>
-  
-<div id="game">
+<!-- START SCREEN -->
+<div id="startScreen">
+  <div id="title">BIRTHDAY GAME</div>
+  <button id="startBtn">START</button>
+</div>
 
-   <canvas id="confetti"></canvas>
+<!-- GAME -->
+<div id="game">
+  <canvas id="confetti"></canvas>
 
   <img id="background" src="bg1.png">
-
   <img id="character" src="character1.PNG">
 
   <div id="dialogue">Is it your birthday?</div>
@@ -24,10 +26,10 @@
     <button id="yesBtn">Yes</button>
     <button id="noBtn">No</button>
   </div>
-
 </div>
 
-<audio id="song" src="audio1.mp3" loop></audio>  
+<!-- AUDIO -->
+<audio id="song" src="audio1.mp3" loop></audio>
 <audio id="songHappy" src="audio.mp3"></audio>
 
 <script src="script.js"></script>
