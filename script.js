@@ -2,21 +2,13 @@ window.onload = function () {
 
 let yesBtn = document.getElementById("yesBtn");
 let noBtn = document.getElementById("noBtn");
-window.onload = function () {
 
 let song = document.getElementById("song");
 let songHappy = document.getElementById("songHappy");
 
-// START GAME MUSIC
-song.volume = 0.5;
-song.loop = true;
-song.play();
-
 let dialogue = document.getElementById("dialogue");
 let character = document.getElementById("character");
 let background = document.getElementById("background");
-
-let song = document.getElementById("song");
 
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
