@@ -2,6 +2,7 @@ window.onload = function () {
 
 let yesBtn = document.getElementById("yesBtn");
 let noBtn = document.getElementById("noBtn");
+let songHappy = document.getElementById("songHappy");
 
 let dialogue = document.getElementById("dialogue");
 let character = document.getElementById("character");
@@ -67,16 +68,34 @@ function drawConfetti(){
 yesBtn.onclick = function(){
 
     background.src = "bg2.png";
-    character.src = "character3.PNG";
 
+    // stop intro music
+    song.pause();
     song.currentTime = 0;
-    song.play();
+
+    // switch character first
+    character.src = "character3.PNG";
 
     typeText(dialogue, "Happy Birthday!!!");
 
     drawConfetti();
 
     document.getElementById("choices").style.display = "none";
+
+    // start happy music
+    songHappy.currentTime = 0;
+    songHappy.play();
+
+    // fade out character3 then swap
+    setTimeout(() => {
+        character.style.opacity = "0";
+
+        setTimeout(() => {
+            character.src = "photo1.jpeg";
+            character.style.opacity = "1";
+        }, 1200);
+
+    }, 1500);
 }
 
 noBtn.onclick = function(){
