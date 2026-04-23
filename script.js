@@ -76,6 +76,12 @@ function drawConfetti(){
 let startScreen = document.getElementById("startScreen");
 
 let song = document.getElementById("song");
+
+ageInput.addEventListener("focus", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 100);
+});
   
 startBtn.onclick = function () {
 
