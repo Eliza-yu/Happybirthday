@@ -101,7 +101,7 @@ startBtn.onclick = function () {
     if (age !== "19") {
 
         character.src = "character7.PNG";
-        typeText(dialogue, "Be serious!");
+        typeText(dialogue, "Be" + " serious!");
 
         ageInput.value = "";
         return;
@@ -116,7 +116,7 @@ yesBtn.onclick = function () {
     background.src = "bg2.png";
 
     character.src = "character5.PNG";
-    typeText(dialogue, "How old are you?");
+    typeText(dialogue, "How" + " old" + " are" + " you?");
 
     document.getElementById("choices").style.display = "none";
     ageBox.style.display = "block";
@@ -125,7 +125,7 @@ yesBtn.onclick = function () {
   function startBirthdaySequence() {
 
     character.src = "character6.PNG";
-    typeText(dialogue, "damn you're ancient");
+    typeText(dialogue, "damn" + " you're" + " ancient");
 
     setTimeout(() => {
 
@@ -143,7 +143,7 @@ yesBtn.onclick = function () {
 
             drawConfetti();
 
-            typeText(dialogue, "Happy Birthday!!!");
+            typeText(dialogue, "Happy" + " Birthday!!!");
 
             document.getElementById("choices").style.display = "none";
 
@@ -175,7 +175,7 @@ noBtn.onclick = function(){
 
     else if(noCount == 2){
         character.src = "character4.PNG";
-        typeText(dialogue, "Yeah yeah.");
+        typeText(dialogue, "Yeah" +" yeah.");
         noBtn.style.display = "none";
     }
 }
