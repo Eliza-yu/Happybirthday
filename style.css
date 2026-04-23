@@ -1,11 +1,9 @@
-body{
-  margin:0;
-  background-color:#aee6ff;
-  font-family:'Press Start 2P', cursive;
-  overflow:hidden;
-  position: fixed;
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 @keyframes idleBounce {
@@ -55,7 +53,6 @@ body{
 #game {
   position: fixed;
   inset: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -75,6 +72,7 @@ body{
   top: 50%;
   transform: translate(-50%, -50%);
   height: min(60vh, 500px);
+  z-index: 2;
   max-width:90vw;
   object-fit:contain;
 
@@ -105,12 +103,19 @@ body{
   font-family: Arial, sans-serif;
 }
 
-#choices{
-  position:absolute;
-  bottom:4%;
-  width:100%;
-  text-align:center;
+#dialogue,
+#choices,
+#ageBox {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
 }
+
+#dialogue { bottom: 18%; }
+#choices { bottom: 6%; }
+#ageBox { bottom: 6%; }
 
 #confetti{
   position:absolute;
@@ -125,14 +130,6 @@ body{
 #background{
   z-index:0;
   position:absolute;
-}
-
-#ui, #choices, #ageBox {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
 }
 
 button{
