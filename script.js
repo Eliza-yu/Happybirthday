@@ -25,19 +25,21 @@ resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 let noCount = 0;
 
-function typeText(element, text, speed = 40) {
-  element.innerText = "";
-  let i = 0;
+function typeText(element, text, speed = 40, callback) {
+    element.innerText = "";
+    let i = 0;
 
-  function type() {
-    if (i < text.length) {
-      element.innerText += text[i];
-      i++;
-      setTimeout(type, speed);
+    function type() {
+        if (i < text.length) {
+            element.innerText += text[i];
+            i++;
+            setTimeout(type, speed);
+        } else {
+            if (callback) callback();
+        }
     }
-  }
 
-  type();
+    type();
 }
 
 let confettiPieces = [];
@@ -119,7 +121,7 @@ startBtn.onclick = function () {
 };
   
 yesBtn.onclick = function () {
-    background.src = "bg2.png";
+    background.src = "bg1.png";
 
     character.src = "character5.PNG";
     typeText(dialogue, "How" + " old" + " are" + " you?");
@@ -131,22 +133,24 @@ yesBtn.onclick = function () {
   function startBirthdaySequence() {
 
     character.src = "character6.PNG";
-    typeText(dialogue, "damn" + " you're" + " ancient");
+
+typeText(dialogue, "damn you're ancient", 40, () => {
 
     setTimeout(() => {
 
         character.src = "character8.PNG";
-        typeText(dialogue, "anyway!");
+
+        typeText(dialogue, "anyway!", 40, () => {
 
         setTimeout(() => {
 
+          background.src = "bg2.png";
             // your original birthday flow
             song.pause();
             song.currentTime = 0;
 
             songHappy.currentTime = 0;
             songHappy.play();
-
             drawConfetti();
 
             typeText(dialogue, "Happy" + " Birthday!!!");
