@@ -153,7 +153,7 @@ yesBtn.onclick = function () {
                     songHappy.play();
 
                     drawConfetti();
-
+                  character.src = "character3.PNG";
                     typeText(dialogue, "Happy Birthday!!!");
 
                     document.getElementById("choices").style.display = "none";
