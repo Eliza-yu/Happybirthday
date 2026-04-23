@@ -6,9 +6,9 @@ body{
 }
 
 @keyframes idleBounce {
-  0%   { transform: translateX(-50%) translateY(0px); }
+  0%   { transform: translateX(-50%) translateY(0); }
   50%  { transform: translateX(-50%) translateY(-6px); }
-  100% { transform: translateX(-50%) translateY(0px); }
+  100% { transform: translateX(-50%) translateY(0); }
 }
 
 .fade-out {
@@ -54,6 +54,9 @@ body{
   width:100vw;
   height:100vh;
   overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
 }
 
 #background{
@@ -68,7 +71,12 @@ body{
   position:absolute;
   bottom:15%;
   left:50%;
-  height: min(60vh, 500px);
+  transform: translateX(-50%);
+
+  height:min(60vh, 500px);
+  max-width:90vw;
+  object-fit:contain;
+
   image-rendering: pixelated;
 
   animation: idleBounce 1.6s ease-in-out infinite;
