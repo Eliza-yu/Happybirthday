@@ -134,43 +134,48 @@ yesBtn.onclick = function () {
 
     character.src = "character6.PNG";
 
-typeText(dialogue, "damn you're ancient", 40, () => {
-
-    setTimeout(() => {
-
-        character.src = "character8.PNG";
-
-        typeText(dialogue, "anyway!", 40, () => {
+    typeText(dialogue, "damn you're ancient", 40, () => {
 
         setTimeout(() => {
 
-          background.src = "bg2.png";
-            // your original birthday flow
-            song.pause();
-            song.currentTime = 0;
+            character.src = "character8.PNG";
 
-            songHappy.currentTime = 0;
-            songHappy.play();
-            drawConfetti();
-
-            typeText(dialogue, "Happy" + " Birthday!!!");
-
-            document.getElementById("choices").style.display = "none";
-
-            setTimeout(() => {
-
-                character.style.opacity = "0";
+            typeText(dialogue, "anyway!", 40, () => {
 
                 setTimeout(() => {
-                    character.src = "photo1.jpg";
-                    character.style.opacity = "1";
-                }, 1000);
 
-            }, 1200);
+                    background.src = "bg2.png";
+
+                    song.pause();
+                    song.currentTime = 0;
+
+                    songHappy.currentTime = 0;
+                    songHappy.play();
+
+                    drawConfetti();
+
+                    typeText(dialogue, "Happy Birthday!!!");
+
+                    document.getElementById("choices").style.display = "none";
+
+                    setTimeout(() => {
+
+                        character.style.opacity = "0";
+
+                        setTimeout(() => {
+                            character.src = "photo1.jpg";
+                            character.style.opacity = "1";
+                        }, 1000);
+
+                    }, 1200);
+
+                }, 1200);
+
+            });
 
         }, 1200);
 
-    }, 1200);
+    });
 }
 
 noBtn.onclick = function(){
