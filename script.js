@@ -9,6 +9,9 @@ let songHappy = document.getElementById("songHappy");
 let dialogue = document.getElementById("dialogue");
 let character = document.getElementById("character");
 let background = document.getElementById("background");
+let ageBox = document.getElementById("ageBox");
+let ageInput = document.getElementById("ageInput");
+let ageSubmit = document.getElementById("ageSubmit");
 
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
@@ -73,7 +76,7 @@ function drawConfetti(){
 let startScreen = document.getElementById("startScreen");
 
 let song = document.getElementById("song");
-
+  
 startBtn.onclick = function () {
 
     if (!song) {
@@ -91,33 +94,71 @@ startBtn.onclick = function () {
     });
 };
   
-yesBtn.onclick = function(){
+  ageSubmit.onclick = function () {
 
+    let age = ageInput.value.trim();
+
+    if (age !== "19") {
+
+        character.src = "character7.PNG";
+        typeText(dialogue, "Be serious!");
+
+        ageInput.value = "";
+        return;
+    }
+
+    ageBox.style.display = "none";
+
+    startBirthdaySequence();
+};
+  
+yesBtn.onclick = function () {
     background.src = "bg2.png";
 
-    song.pause();
-    song.currentTime = 0;
-
-    character.src = "character3.PNG";
-
-    typeText(dialogue, "Happy Birthday!!!");
-
-    drawConfetti();
+    character.src = "character5.PNG";
+    typeText(dialogue, "How old are you?");
 
     document.getElementById("choices").style.display = "none";
+    ageBox.style.display = "block";
+};
 
-    songHappy.currentTime = 0;
-    songHappy.play();
+  function startBirthdaySequence() {
 
-    // smooth swap
+    character.src = "character6.PNG";
+    typeText(dialogue, "damn you're ancient");
+
     setTimeout(() => {
 
-        character.style.opacity = "0";
+        character.src = "character8.PNG";
+        typeText(dialogue, "anyway!");
 
         setTimeout(() => {
-            character.src = "photo1.jpg";
-            character.style.opacity = "1";
-        }, 1000);
+
+            // your original birthday flow
+            song.pause();
+            song.currentTime = 0;
+
+            songHappy.currentTime = 0;
+            songHappy.play();
+
+            drawConfetti();
+
+            typeText(dialogue, "Happy Birthday!!!");
+
+            document.getElementById("choices").style.display = "none";
+
+            setTimeout(() => {
+
+                character.style.opacity = "0";
+
+                setTimeout(() => {
+                    character.src = "photo1.jpg";
+                    character.style.opacity = "1";
+                }, 1000);
+
+            }, 1200);
+
+        }, 1200);
 
     }, 1200);
 }
