@@ -2,6 +2,9 @@ console.log("startBtn:", document.getElementById("startBtn"));
 console.log("song:", document.getElementById("song"));
 window.onload = function () {
 
+let startBtn = document.getElementById("startBtn");
+let startScreen = document.getElementById("startScreen");
+let song = document.getElementById("song");
 let yesBtn = document.getElementById("yesBtn");
 let noBtn = document.getElementById("noBtn");
 let songHappy = document.getElementById("songHappy");
