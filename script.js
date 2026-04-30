@@ -1,5 +1,3 @@
-console.log("startBtn:", document.getElementById("startBtn"));
-console.log("song:", document.getElementById("song"));
 window.onload = function () {
 
 let startBtn = document.getElementById("startBtn");
@@ -217,7 +215,7 @@ yesBtn.onclick = function () {
     scareAudio.currentTime = 0;
     scareAudio.play();
 
-    screenShake(1200); // 👈 ADD THIS
+    screenShake(1200);
 
     setTimeout(() => {
 
