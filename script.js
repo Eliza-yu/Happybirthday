@@ -85,10 +85,15 @@ function drawConfetti(){
         gift.style.display = "block";
 
         gift.onclick = function () {
+
+            // ✅ stop music immediately
+            songHappy.pause();
+            songHappy.currentTime = 0;
+
             startJumpscare();
         };
 
-    }, 8000);
+    }, 800); // shorter delay feels better
 }
   
   function screenShake(duration = 800){
@@ -211,43 +216,57 @@ yesBtn.onclick = function () {
 }); // closes typeText "damn you're ancient"
 }
     
-  function startJumpscare(){
+ function startJumpscare(){
 
     gift.style.display = "none";
 
-    scare.style.display = "block";
-    scareAudio.currentTime = 0;
-    scareAudio.play();
-
-    screenShake(1200);
+    // 🖤 STEP 1: fade to black
+    document.body.style.background = "black";
+    character.style.opacity = "0";
+    background.style.opacity = "0";
 
     setTimeout(() => {
 
-        let lines = [
-            "HAHAHAHA",
-            "I hope I got you.",
-            "Happy birthday twin!!",
-            "I'm not good with words but I do hope you enjoy your last year in this world",
-            "well of being a teenager ofc."
-        ];
+        // 😱 STEP 2: show jumpscare
+        scare.style.display = "block";
+        scareAudio.currentTime = 0;
+        scareAudio.play();
 
-        let i = 0;
-        dialogue.style.color = "white";
-        document.body.style.background = "black";
+        screenShake(1200);
 
-        function showLine(){
-            if(i < lines.length){
-                typeText(dialogue, lines[i], 50, () => {
-                    setTimeout(showLine, 1200);
-                });
-                i++;
+        setTimeout(() => {
+
+            // 🧠 STEP 3: hide scare → start text
+            scare.style.display = "none";
+
+            let lines = [
+                "HAHAHAHA",
+                "I hope I got you.",
+                "Happy birthday twin!!",
+                "I'm not good with words but I do hope you enjoy your last year in this world",
+                "being a teenager ofc."
+            ];
+
+            let i = 0;
+
+            dialogue.style.display = "block";
+            dialogue.style.color = "white";
+
+            function showLine(){
+                if(i < lines.length){
+                    typeText(dialogue, lines[i], 50, () => {
+                        setTimeout(showLine, 1200);
+                    });
+                    i++;
+                }
             }
-        }
 
-        showLine();
+            showLine();
 
-    }, 1200);
-  }
+        }, 1200); // duration of scare
+
+    }, 600); // short black screen delay
+}
     
 noBtn.onclick = function(){
 
