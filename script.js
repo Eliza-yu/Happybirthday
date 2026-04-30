@@ -188,24 +188,14 @@ yesBtn.onclick = function () {
                         setTimeout(() => {
   
                           character.style.opacity = "0";
-                          setTimeout(() => { 
-                            character.src = "photo1.jpg";
-                              character.style.opacity = "1";
 
-                                         triggerGift();
+setTimeout(() => { 
+    character.src = "photo1.jpg";
+    character.style.opacity = "1";
 
-                           }, 1000);
+    triggerGift();
 
-                     }, 1200);
-
-                }, 1200);
-
-            });
-
-        }, 1200);
-
-    });
-}
+}, 1000);
 
     function startJumpscare(){
 
