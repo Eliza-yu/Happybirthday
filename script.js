@@ -255,4 +255,5 @@ noBtn.onclick = function(){
         typeText(dialogue, "Yeah" +" yeah.");
         noBtn.style.display = "none";
     }
-}
+  }
+};
