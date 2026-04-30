@@ -1,10 +1,6 @@
 console.log("startBtn:", document.getElementById("startBtn"));
 console.log("song:", document.getElementById("song"));
 window.onload = function () {
-  character.onload = function () {
-  character.style.left = "50%";
-  character.style.top = "50%";
-  character.style.transform = "translate(-50%, -50%)";
 
 let yesBtn = document.getElementById("yesBtn");
 let noBtn = document.getElementById("noBtn");
@@ -19,6 +15,12 @@ let ageSubmit = document.getElementById("ageSubmit");
 
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
+  
+  character.onload = function () {
+  character.style.left = "50%";
+  character.style.top = "50%";
+  character.style.transform = "translate(-50%, -50%)";
+};
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
