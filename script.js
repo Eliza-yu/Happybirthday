@@ -238,6 +238,7 @@ yesBtn.onclick = function () {
         showLine();
 
     }, 1200);
+  }
     
 noBtn.onclick = function(){
 
