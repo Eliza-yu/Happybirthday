@@ -157,50 +157,58 @@ yesBtn.onclick = function () {
 
     character.src = "character6.PNG";
 
-    typeText(dialogue, "damn you're ancient", 40, () => {
-
-        setTimeout(() => {
-
-            character.src = "character8.PNG";
-
-            typeText(dialogue, "anyway!", 40, () => {
-
-                setTimeout(() => {
-
-                    background.src = "bg2.png";
-
-                    song.pause();
-                    song.currentTime = 0;
-
-                    songHappy.currentTime = 0;
-                    songHappy.play();
-
-                    drawConfetti();
-                  character.src = "character3.PNG";
-                    typeText(dialogue, "Happy Birthday!!!");
-
-                    document.getElementById("choices").style.display = "none";
-
-                    setTimeout(() => {
-
-    character.style.opacity = "0";
+   typeText(dialogue, "damn you're ancient", 40, () => {
 
     setTimeout(() => {
 
-        character.style.opacity = "0";
+        character.src = "character8.PNG";
 
-        setTimeout(() => { 
-            character.src = "photo1.jpg";
-            character.style.opacity = "1";
+        typeText(dialogue, "anyway!", 40, () => {
 
-            triggerGift();
+            setTimeout(() => {
 
-        }, 1000);
+                background.src = "bg2.png";
 
-    }, 1200);
+                song.pause();
+                song.currentTime = 0;
 
- }, 1200);
-});
+                songHappy.currentTime = 0;
+                songHappy.play();
+
+                drawConfetti();
+
+                character.src = "character3.PNG";
+                typeText(dialogue, "Happy Birthday!!!");
+
+                document.getElementById("choices").style.display = "none";
+
+                setTimeout(() => {
+
+                    character.style.opacity = "0";
+
+                    setTimeout(() => {
+
+                        character.style.opacity = "0";
+
+                        setTimeout(() => { 
+                            character.src = "photo1.jpg";
+                            character.style.opacity = "1";
+
+                            triggerGift();
+
+                        }, 1000);
+
+                    }, 1200);
+
+                }, 1200);
+
+            }, 1200); // closes inner setTimeout
+
+        }); // closes typeText "anyway!"
+
+    }, 1200); // closes first setTimeout
+
+}); // closes typeText "damn you're ancient"
 
     function startJumpscare(){
 
