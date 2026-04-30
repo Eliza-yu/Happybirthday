@@ -278,20 +278,44 @@ dialogue.style.boxShadow = "none";
 ageBox.style.display = "none";
 
             function showLine(){
-                if(i < lines.length){
-                    typeText(dialogue, lines[i], 50, () => {
-                        setTimeout(showLine, 1200);
-                    });
-                    i++;
-                }
-            }
-
+    if(i < lines.length){
+        typeText(dialogue, lines[i], 50, () => {
+            setTimeout(showLine, 1200);
+        });
+        i++;
+    } else {
+        // ✅ THIS RUNS AFTER LAST LINE
+        enableRestart();
+    }
+}
+          
             showLine();
+          document.body.style.cursor = "pointer";
 
         }, 1200); // duration of scare
 
     }, 600); // short black screen delay
 }
+  function enableRestart(){
+
+    let restartText = document.createElement("div");
+    restartText.innerText = "Click to restart";
+    restartText.style.position = "absolute";
+    restartText.style.bottom = "10%";
+    restartText.style.width = "100%";
+    restartText.style.textAlign = "center";
+    restartText.style.color = "white";
+    restartText.style.opacity = "0.7";
+
+    document.body.appendChild(restartText);
+
+    document.body.style.cursor = "pointer";
+
+    document.body.onclick = function () {
+        location.reload();
+    };
+}
+  
     
 noBtn.onclick = function(){
 
