@@ -7,9 +7,9 @@ html, body {
 }
 
 @keyframes idleBounce {
-  0%   { transform: translate(-50%, -50%) translateY(0px); }
-  50%  { transform: translate(-50%, -50%) translateY(-6px); }
-  100% { transform: translate(-50%, -50%) translateY(0px); }
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
 }
 
 .fade-out {
@@ -93,7 +93,7 @@ html, body {
   transition: opacity 1.2s ease;
 }
 
-#img{
+img{
   display:block;
 }
 
