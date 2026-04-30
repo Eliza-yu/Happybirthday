@@ -1,5 +1,20 @@
-console.log("startBtn:", document.getElementById("startBtn"));
-console.log("song:", document.getElementById("song"));
+startBtn.onclick = function () {
+    console.log("START CLICKED"); // 👈 add this
+
+    if (!song) {
+        console.log("ERROR: song not found");
+        return;
+    }
+
+    startScreen.style.display = "none";
+    song.volume = 0.5;
+    song.loop = true;
+
+    song.play().catch(err => {
+        console.log("Audio blocked or missing:", err);
+    });
+};
+
 window.onload = function () {
 
 let yesBtn = document.getElementById("yesBtn");
