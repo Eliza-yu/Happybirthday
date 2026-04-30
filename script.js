@@ -47,6 +47,10 @@ function typeText(element, text, speed = 40, callback) {
 
     type();
 }
+  function setDialogueColor(color){
+    dialogue.classList.remove("whiteText", "blackText");
+    dialogue.classList.add(color);
+}
 
 let confettiPieces = [];
 
@@ -256,6 +260,7 @@ song.play().catch(()=>{});
             let i = 0;
 
             dialogue.style.display = "block";
+          setDialogueColor("whiteText");
 
 // center it
 dialogue.style.top = "50%";
