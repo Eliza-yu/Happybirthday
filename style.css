@@ -72,7 +72,8 @@ html, body {
   left:50%;
   top:50%;
   transform:translate(-50%, -50%);
-
+  object-position:center;
+  display:block;
   height:min(60vh, 500px);
   width:auto;
 
