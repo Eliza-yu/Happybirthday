@@ -101,11 +101,6 @@ function drawConfetti(){
     }, duration);
 }
 
-  let startBtn = document.getElementById("startBtn");
-let startScreen = document.getElementById("startScreen");
-
-let song = document.getElementById("song");
-
 ageInput.addEventListener("focus", () => {
   setTimeout(() => {
     window.scrollTo(0, 0);
