@@ -7,9 +7,9 @@ html, body {
 }
 
 @keyframes idleBounce {
-  0%   { transform: translate(-50%, -50%) translateY(0); }
+  0%   { transform: translate(-50%, -50%) translateY(0px); }
   50%  { transform: translate(-50%, -50%) translateY(-6px); }
-  100% { transform: translate(-50%, -50%) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateY(0px); }
 }
 
 .fade-out {
@@ -68,19 +68,26 @@ html, body {
 }
 
 #character{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: min(60vh, 500px);
-  z-index: 2;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+
+  height:min(60vh, 500px);
+  width:auto;
+
   max-width:90vw;
   object-fit:contain;
 
-  image-rendering: pixelated;
+  z-index:2;
+  image-rendering:pixelated;
 
-  animation: idleBounce 1.6s ease-in-out infinite;
-  transition: opacity 1.2s ease;
+  animation:idleBounce 1.6s ease-in-out infinite;
+  transition:opacity 1.2s ease;
+}
+
+#img{
+  display:block;
 }
 
 #dialogue{
