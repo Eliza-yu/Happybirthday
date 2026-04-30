@@ -209,8 +209,9 @@ yesBtn.onclick = function () {
     }, 1200); // closes first setTimeout
 
 }); // closes typeText "damn you're ancient"
-
-    function startJumpscare(){
+}
+    
+  function startJumpscare(){
 
     gift.style.display = "none";
 
