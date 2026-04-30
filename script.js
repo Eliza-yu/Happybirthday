@@ -15,6 +15,9 @@ let ageSubmit = document.getElementById("ageSubmit");
 
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
+let gift = document.getElementById("gift");
+let scare = document.getElementById("scare");
+let scareAudio = document.getElementById("scareAudio");
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -72,6 +75,29 @@ function drawConfetti(){
     });
 
     requestAnimationFrame(drawConfetti);
+}
+  
+  function triggerGift(){
+
+    setTimeout(() => {
+        gift.style.display = "block";
+
+        gift.onclick = function () {
+            startJumpscare();
+        };
+
+    }, 8000);
+}
+  
+  function screenShake(duration = 800){
+
+    let game = document.getElementById("game");
+
+    game.classList.add("shake");
+
+    setTimeout(() => {
+        game.classList.remove("shake");
+    }, duration);
 }
 
   let startBtn = document.getElementById("startBtn");
@@ -163,11 +189,17 @@ yesBtn.onclick = function () {
                         character.style.opacity = "0";
 
                         setTimeout(() => {
+  
+                          character.style.opacity = "0";
+                          setTimeout(() => { 
                             character.src = "photo1.jpg";
-                            character.style.opacity = "1";
-                        }, 1000);
+                              character.style.opacity = "1";
 
-                    }, 1200);
+                                         triggerGift();
+
+                           }, 1000);
+
+                     }, 1200);
 
                 }, 1200);
 
@@ -178,6 +210,44 @@ yesBtn.onclick = function () {
     });
 }
 
+    function startJumpscare(){
+
+    gift.style.display = "none";
+
+    scare.style.display = "block";
+    scareAudio.currentTime = 0;
+    scareAudio.play();
+
+    screenShake(1200); // 👈 ADD THIS
+
+    setTimeout(() => {
+
+        let lines = [
+            "HAHAHAHA",
+            "I hope I got you.",
+            "Happy birthday twin!!",
+            "I'm not good with words but I do hope you enjoy your last year in this world",
+            "well of being a teenager ofc."
+        ];
+
+        let i = 0;
+        dialogue.style.color = "white";
+        document.body.style.background = "black";
+
+        function showLine(){
+            if(i < lines.length){
+                typeText(dialogue, lines[i], 50, () => {
+                    setTimeout(showLine, 1200);
+                });
+                i++;
+            }
+        }
+
+        showLine();
+
+    }, 1200);
+}
+    
 noBtn.onclick = function(){
 
     noCount++;
