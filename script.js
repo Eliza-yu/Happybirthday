@@ -20,6 +20,7 @@ let ctx = canvas.getContext("2d");
 let gift = document.getElementById("gift");
 let scare = document.getElementById("scare");
 let scareAudio = document.getElementById("scareAudio");
+let confettiRunning = false;
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -59,6 +60,8 @@ for(let i=0;i<150;i++){
 }
 
 function drawConfetti(){
+
+    if (!confettiRunning) return;
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
@@ -238,7 +241,10 @@ yesBtn.onclick = function () {
 
             // 🧠 STEP 3: hide scare → start text
             scare.style.display = "none";
-
+song.currentTime = 0;
+song.volume = 0.4;
+song.play().catch(()=>{});
+          
             let lines = [
                 "HAHAHAHA",
                 "I hope I got you.",
@@ -250,7 +256,21 @@ yesBtn.onclick = function () {
             let i = 0;
 
             dialogue.style.display = "block";
-            dialogue.style.color = "white";
+
+// center it
+dialogue.style.top = "50%";
+dialogue.style.left = "50%";
+dialogue.style.transform = "translate(-50%, -50%)";
+
+// make it feel like full-screen text
+dialogue.style.fontSize = "24px";
+dialogue.style.width = "80%";
+dialogue.style.background = "transparent";
+dialogue.style.border = "none";
+dialogue.style.boxShadow = "none";
+
+          document.getElementById("choices").style.display = "none";
+ageBox.style.display = "none";
 
             function showLine(){
                 if(i < lines.length){
