@@ -136,6 +136,37 @@ img{
   font-family: Arial, sans-serif;
 }
 
+#dialogue{
+  position:absolute;
+  bottom:12%;
+  left:50%;
+  transform:translateX(-50%);
+  width: min(70%, 700px);
+
+  text-align:center;
+  font-size: clamp(12px, 2vw, 18px);
+
+  background:white;
+  padding:20px;
+
+  border:4px solid black;
+  box-shadow:4px 4px 0 black;
+  white-space: pre-wrap;
+  letter-spacing: 1px;
+  word-spacing: 6px;
+  font-family: Arial, sans-serif;
+}
+
+.whiteText {
+  color: white;
+  text-shadow: 2px 2px 0 black;
+}
+
+.blackText {
+  color: black;
+  text-shadow: 2px 2px 0 white;
+}
+
 #dialogue,
 #choices,
 #ageBox {
