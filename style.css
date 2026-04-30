@@ -98,6 +98,10 @@ html, body {
   z-index: 2;
 }
 
+#scare {
+  pointer-events: none;
+}
+
 #character{
   max-width:100%;
   max-height:100%;
