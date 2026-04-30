@@ -15,12 +15,6 @@ let ageSubmit = document.getElementById("ageSubmit");
 
 let canvas = document.getElementById("confetti");
 let ctx = canvas.getContext("2d");
-  
-  character.onload = function () {
-  character.style.left = "50%";
-  character.style.top = "50%";
-  character.style.transform = "translate(-50%, -50%)";
-};
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
