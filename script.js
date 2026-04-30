@@ -14,6 +14,7 @@ let ageInput = document.getElementById("ageInput");
 let ageSubmit = document.getElementById("ageSubmit");
 
 let canvas = document.getElementById("confetti");
+console.log("canvas:", canvas);
 let ctx = canvas.getContext("2d");
 let gift = document.getElementById("gift");
 let scare = document.getElementById("scare");
