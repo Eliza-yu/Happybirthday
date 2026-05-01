@@ -184,10 +184,11 @@ yesBtn.onclick = function () {
                 song.pause();
                 song.currentTime = 0;
 
-                songHappy.currentTime = 0;
-                songHappy.play();
+songHappy.currentTime = 0;
+songHappy.play();
 
-                drawConfetti();
+confettiRunning = true;
+drawConfetti();
 
                 character.src = "character3.PNG";
                 typeText(dialogue, "Happy Birthday!!!");
@@ -224,6 +225,8 @@ yesBtn.onclick = function () {
 }
     
  function startJumpscare(){
+
+    confettiRunning = false;
 
     gift.style.display = "none";
 
