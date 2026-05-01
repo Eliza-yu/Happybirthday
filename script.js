@@ -214,13 +214,13 @@ yesBtn.onclick = function () {
 
                 }, 1200);
 
-            }, 1200); // closes inner setTimeout
+            }, 1200); 
 
-        }); // closes typeText "anyway!"
+        }); 
 
-    }, 1200); // closes first setTimeout
+    }, 1200); 
 
-}); // closes typeText "damn you're ancient"
+}); 
 }
     
  function startJumpscare(){
@@ -234,7 +234,7 @@ yesBtn.onclick = function () {
 
     setTimeout(() => {
 
-        // 😱 STEP 2: show jumpscare
+        
         scare.style.display = "block";
         scareAudio.currentTime = 0;
         scareAudio.play();
@@ -243,7 +243,7 @@ yesBtn.onclick = function () {
 
         setTimeout(() => {
 
-            // 🧠 STEP 3: hide scare → start text
+            
             scare.style.display = "none";
 song.currentTime = 0;
 song.volume = 0.4;
@@ -262,12 +262,12 @@ song.play().catch(()=>{});
             dialogue.style.display = "block";
           setDialogueColor("whiteText");
 
-// center it
+
 dialogue.style.top = "50%";
 dialogue.style.left = "50%";
 dialogue.style.transform = "translate(-50%, -50%)";
 
-// make it feel like full-screen text
+
 dialogue.style.fontSize = "24px";
 dialogue.style.width = "80%";
 dialogue.style.background = "transparent";
@@ -284,7 +284,7 @@ ageBox.style.display = "none";
         });
         i++;
     } else {
-        // ✅ THIS RUNS AFTER LAST LINE
+        
         enableRestart();
     }
 }
@@ -292,9 +292,9 @@ ageBox.style.display = "none";
             showLine();
           document.body.style.cursor = "pointer";
 
-        }, 1200); // duration of scare
+        }, 1200); 
 
-    }, 600); // short black screen delay
+    }, 600); 
 }
   function enableRestart(){
 
