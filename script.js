@@ -248,6 +248,10 @@ drawConfetti();
 
             
             scare.style.display = "none";
+
+confettiRunning = false; 
+ctx.clearRect(0,0,canvas.width,canvas.height); 
+
 song.currentTime = 0;
 song.volume = 0.4;
 song.play().catch(()=>{});
