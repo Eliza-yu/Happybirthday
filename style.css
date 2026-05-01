@@ -30,19 +30,17 @@ html, body {
   transition: opacity 1.2s ease;
 }
 #startScreen{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
+  position: fixed;
+  inset: 0;
 
-  background:#aee6ff;
-  z-index:999;
+  background-image: url("start.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #title{
