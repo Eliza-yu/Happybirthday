@@ -93,14 +93,14 @@ function drawConfetti(){
 
         gift.onclick = function () {
 
-            // ✅ stop music immediately
+            
             songHappy.pause();
             songHappy.currentTime = 0;
 
             startJumpscare();
         };
 
-    }, 800); // shorter delay feels better
+    }, 800); 
 }
   
   function screenShake(duration = 800){
@@ -227,7 +227,7 @@ yesBtn.onclick = function () {
 
     gift.style.display = "none";
 
-    // 🖤 STEP 1: fade to black
+    
     document.body.style.background = "black";
     character.style.opacity = "0";
     background.style.opacity = "0";
