@@ -257,7 +257,7 @@ song.volume = 0.4;
 song.play().catch(()=>{});
           
             let lines = [
-                "HAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA",
+                "HAHAHAHAHAHAHAHAHHAHA HAHAHAHAHAHAHAHAHAHAHAHA HAHAHAHAHAHAHAHA HAHAHA",
                 "I hope I got you.",
                 "Happy birthday twin!!",
                 "I'm not good with words so I won't type a paragraph",
