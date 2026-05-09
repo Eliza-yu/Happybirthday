@@ -257,15 +257,19 @@ song.volume = 0.4;
 song.play().catch(()=>{});
           
             let lines = [
-                "HAHAHAHAHAHAHAHAHHAHA HAHAHAHAHAHAHAHAHAHAHAHA HAHAHAHAHAHAHAHA HAHAHA",
+                "HAHAHAHAHAHAHAHAHHAHA HAHAHAHAHAHAHAHAHAHAHAHA HAHAHAHAHAHAHAHAHAHAHA",
                 "I hope I got you.",
-                "Happy birthday twin!!",
                 "I'm not good with words so I won't type a paragraph",
                 "Why would I? I mean birthdays are just reminders that you are getting old",
-                "soon you'll be working and paying taxes to our corrupt government",
+                "soon you'll be working a 9-5 job and paying taxes to our corrupt government",
                 "but I do hope you enjoy your last year in this world",
                 "...",
-                "being a teenager."
+                "being a teenager.",
+                "Kidding aside, I do wish you well.",
+                "Happy Birthday twin!!",
+                "And",
+                "Thank you."
+          
             ];
 
             let i = 0;
