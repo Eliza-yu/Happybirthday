@@ -233,9 +233,11 @@ drawConfetti();
     character.style.opacity = "0";
     background.style.opacity = "0";
    
-    scare.style.display = "block";
     scareAudio.currentTime = 0;
     scareAudio.play();
+
+   setTimeout(() => {
+    scare.style.display = "block";
     screenShake(1200);
 
         setTimeout(() => {
@@ -302,6 +304,7 @@ ageBox.style.display = "none";
           document.body.style.cursor = "pointer";
 
         }, 1200); 
+   }, 100);
 }
   function enableRestart(){
 
