@@ -230,18 +230,13 @@ drawConfetti();
 
     gift.style.display = "none";
     document.body.style.background = "black";
-   
-    scare.style.display = "block";
-        scareAudio.currentTime = 0;
-        scareAudio.play();
-
-    setTimeout(() => {
-
     character.style.opacity = "0";
     background.style.opacity = "0";
-        
-       
-        screenShake(1200);
+   
+    scare.style.display = "block";
+    scareAudio.currentTime = 0;
+    scareAudio.play();
+    screenShake(1200);
 
         setTimeout(() => {
 
